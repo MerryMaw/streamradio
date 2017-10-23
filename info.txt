@@ -1,0 +1,12 @@
+"AddonInfo"
+{
+	"name"			"StreamURL Radio Edition"
+	"version"		"0.13"
+	"up_date"		"January 20, 2014"
+	"author_name"		"The Maw"
+	"author_email"		"cjbremer@gmail.com"
+	"author_url"		"www.devinity2.com"
+	"info"			"Yez"
+
+	"override"	"0"
+}

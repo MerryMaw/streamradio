@@ -1,0 +1,10 @@
+{
+	"title"		:	"Maw's StreamURL Radio/Youtube Edition",
+	"type"		:	"effects",
+	"tags"		:	[ "fun", "scenic" ],
+	"ignore"	:   
+	[
+		"*.txt",
+		"*.jpg"
+	]
+}
