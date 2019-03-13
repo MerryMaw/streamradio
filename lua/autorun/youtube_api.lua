@@ -23,6 +23,11 @@ else
 			
 			
 			<script>
+			  function changeVideoID(videoId) {
+				var vidFrame = document.getElementByID("player");
+				vidFrame.src = "http://www.youtube.com/embed/]]..ID..[[?enablejsapi=1";
+			  }
+			  
 			  // 2. This code loads the IFrame Player API code asynchronously.
 			  var tag = document.createElement('script');
 

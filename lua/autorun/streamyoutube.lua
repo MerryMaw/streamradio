@@ -89,19 +89,21 @@ if (CLIENT) then
 		if (!URL) then return end
 		URL = string.gsub(URL,"watch?v=","")
 		
-		
+		print(URL)
 		if (!IsValid(Ent.YoutubeURL)) then
-			Ent.YoutubeURL = vgui.Create("HTML")
+			Ent.YoutubeURL = vgui.Create("DHTML")
 			Ent.YoutubeURL:SetPos(-480,-270)
 			Ent.YoutubeURL:SetSize(960,540)
 			Ent.YoutubeURL:SetMouseInputEnabled(false)
 			Ent.YoutubeURL:SetPaintedManually(true)
+			
+			local HTML = GetHTMLScript(URL)
+			Ent.YoutubeURL:SetHTML(HTML)
 		end
 		
-		local HTML = GetHTMLScript(URL)
-			
 		if (!IsValid(Ent.YoutubeURL)) then MsgN("This panel appears to be destroyed into oblivion... Is one of your addons deleting the HTML panel?") return end
-		Ent.YoutubeURL:SetHTML(HTML)
+		
+		Ent.YoutubeURL:QueueJavascript("changeVideoID("..URL..")")
 		Ent.URL = OrgURL
 		
 		Ent.YoutubeURL.Think = function(s)
@@ -109,7 +111,7 @@ if (CLIENT) then
 			local dis = math.Clamp(LocalPlayer():GetShootPos():Distance(Ent:GetPos()),Min,Max)
 			local m = math.Remap(dis,Max,Min,0,100)
 			
-			Ent.YoutubeURL:RunJavascript("player.setVolume("..m..");")
+			//Ent.YoutubeURL:RunJavascript("player.setVolume("..m..");")
 		end
 	end)
 else
